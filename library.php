@@ -33,28 +33,9 @@ else {
 }
 // end include class.secure.php
 
-
-// Checking Requirements
-$PRECHECK['PHP_VERSION'] = array('VERSION' => '5.2.0', 'OPERATOR' => '>=');
-
-if (extension_loaded('gd')) {
-	$required = 'gd';
-	$actual = 'gd';
-}
-elseif (extension_loaded('gd2')){
-	$required = 'gd2';
-	$actual = 'gd2';
-}
-else {
-	$required = 'gd';
-	$actual = 'none';
-}
-$PRECHECK['CUSTOM_CHECKS'] = array(
-	'GD library' => array(
-		'REQUIRED' => $required,
-		'ACTUAL' => $actual,
-		'STATUS' => ($actual === $required)
-	)
-);
-
-?>
+/**
+ * pChart does not include any library automatically,
+ * this must be done by the modules themselves.
+ *
+ * So, here is nothing to do...
+ */
