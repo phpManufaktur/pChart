@@ -48,7 +48,7 @@
  $myBubbleChart->bubbleScale($bubbleDataSeries,$bubbleWeightSeries);
 
  /* Draw the bubble chart */
- $myBubbleChart->drawBubbleChart($bubbleDataSeries,$bubbleWeightSeries,array("ForceAlpha"=>50));
+ $myBubbleChart->drawBubbleChart($bubbleDataSeries,$bubbleWeightSeries,array("BorderWidth"=>4,"BorderAlpha"=>50,"Surrounding"=>20));
 
  /* Write the chart legend */
  $myPicture->drawLegend(570,13,array("Style"=>LEGEND_NOBORDER,"Mode"=>LEGEND_HORIZONTAL));

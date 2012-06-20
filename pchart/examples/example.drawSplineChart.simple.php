@@ -11,6 +11,7 @@
  $MyData->addPoints(array(-4,VOID,VOID,12,8,3),"Probe 1");
  $MyData->addPoints(array(3,12,15,8,5,-5),"Probe 2");
  $MyData->addPoints(array(2,7,5,18,19,22),"Probe 3");
+ $MyData->setPalette("Probe 1",array("R"=>220,"G"=>60,"B"=>20));
  $MyData->setSerieTicks("Probe 2",4);
  $MyData->setSerieWeight("Probe 3",2);
  $MyData->setAxisName(0,"Temperatures");
@@ -23,6 +24,10 @@
 
  /* Turn of Antialiasing */
  $myPicture->Antialias = FALSE;
+
+ /* Draw a background */
+ $Settings = array("R"=>190, "G"=>213, "B"=>107, "Dash"=>1, "DashR"=>210, "DashG"=>223, "DashB"=>127); 
+ $myPicture->drawFilledRectangle(0,0,700,230,$Settings); 
 
  /* Add a border to the picture */
  $myPicture->drawRectangle(0,0,699,229,array("R"=>0,"G"=>0,"B"=>0));
@@ -46,6 +51,7 @@
 
  /* Draw the line chart */
  $myPicture->drawSplineChart();
+ $myPicture->drawPlotChart(array("PlotBorder"=>TRUE,"BorderSize"=>1,"Surrounding"=>-60,"BorderAlpha"=>80));
 
  /* Write the chart legend */
  $myPicture->drawLegend(540,20,array("Style"=>LEGEND_NOBORDER,"Mode"=>LEGEND_HORIZONTAL));
